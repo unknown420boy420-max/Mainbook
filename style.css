@@ -32,3 +32,16 @@ header {
 }
 
 button { padding:8px; }
+#profile {
+  padding: 10px;
+}
+
+#userEmail {
+  color: gray;
+}
+
+#myPosts img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
