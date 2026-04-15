@@ -1,0 +1,34 @@
+body { margin:0; background:#000; color:white; font-family:Arial; }
+
+header {
+  text-align:center;
+  padding:15px;
+  border-bottom:1px solid #222;
+}
+
+.post {
+  margin:10px;
+  background:#111;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.post img { width:100%; }
+
+.actions {
+  padding:10px;
+  display:flex;
+  justify-content:space-between;
+}
+
+.navbar {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#111;
+  display:flex;
+  justify-content:space-around;
+  padding:10px;
+}
+
+button { padding:8px; }
