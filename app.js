@@ -101,3 +101,42 @@ function showFeed(){
 function showProfile(){
   alert("Profile coming soon 😎");
 }
+function showProfile(){
+  document.getElementById("feed").style.display = "none";
+  document.getElementById("uploadBox").style.display = "none";
+  document.getElementById("profile").style.display = "block";
+
+  if(currentUser){
+    document.getElementById("userEmail").innerText = currentUser.email;
+    loadMyPosts();
+  }
+}
+function loadMyPosts(){
+  db.collection("posts")
+  .where("user", "==", currentUser.email)
+  .orderBy("createdAt","desc")
+  .get()
+  .then(snapshot => {
+    const box = document.getElementById("myPosts");
+    box.innerHTML = "";
+
+    snapshot.forEach(doc => {
+      const data = doc.data();
+
+      box.innerHTML += `
+        <div class="post">
+          <img src="${data.image}">
+          <div class="actions">
+            ❤️ ${data.likes || 0}
+          </div>
+        </div>
+      `;
+    });
+  });
+}
+db.collection("posts").add({
+  user: currentUser.email,
+  image: url,
+  likes: 0,
+  createdAt: Date.now()
+});
