@@ -73,3 +73,18 @@ button { padding:8px; }
   height: 100%;
   object-fit: cover;
 }
+.profile {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 4px solid white;
+  overflow: hidden;
+  margin-top: -55px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cover {
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+}
